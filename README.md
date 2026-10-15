@@ -1,112 +1,114 @@
 # Mandhira Nayagi
 
-**Technical writer for software, SaaS and API products** | Open to remote roles
+**Technical Writer | Instructional Designer | Business Analyst**  
+*Open to remote roles (US, UK/EU, and APAC time zone overlap)*
 
-[LinkedIn](https://www.linkedin.com/in/get-mandhira-thilip/) |
-[Email](mailto:mandhira.thilip@gmail.com) |
-Madurai, Tamil Nadu, India
+[![Portfolio Website](https://img.shields.io/badge/Live_Portfolio-Website-0b4f54?style=for-the-badge&logo=githubpages&logoColor=white)](https://mandhira.github.io/My-Portfolio/)
+[![Validate documentation](https://github.com/Mandhira/My-Portfolio/actions/workflows/validate.yml/badge.svg)](https://github.com/Mandhira/My-Portfolio/actions/workflows/validate.yml)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/get-mandhira-thilip/)
+[![Email](https://img.shields.io/badge/Email-mandhira.thilip%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:mandhira.thilip@gmail.com)
 
-I write documentation for software people use every day, so a new user can
-finish the task without asking for help. I have five years of experience
-writing user guides, step-by-step walkthroughs, API documentation, release
-notes, FAQs and training materials for enterprise and SaaS applications. I
-work in a docs-as-code workflow with Markdown, Git and Postman.
+---
 
-## Writing samples
+I bridge the gap between software engineers, business stakeholders, and end users. With five years of experience across technical writing, curriculum/instructional design, and business analysis, I produce:
+- **Developer & User Documentation:** API references, OpenAPI/Swagger specs, Postman collections, release notes, and step-by-step guides.
+- **Instructional Design & Training Packages:** Timed lesson plans, interactive labs, learning objectives, assessments, and slide storyboards.
+- **Business Analysis & Requirements:** Clear Business Requirements Documents (BRDs), user stories with acceptance criteria, and workflow diagrams.
 
-| Sample | Type | What it shows |
-| --- | --- | --- |
-| [StayEasy Booking API documentation](samples/api-documentation/) | API documentation | Getting started guide, authentication, endpoint reference, error handling, rate limits, changelog, an OpenAPI 3.0 file and a Postman collection |
-| [readtimer README](samples/readtimer/) | Developer documentation | A README for a small command-line tool, with installation, options, examples that use real output, exit codes and troubleshooting |
-| [Git quick start](samples/quick-start-guide/first-git-repository.md) | Quick-start guide | A one-page guide from zero to a first commit, with the expected result of every step and a table of common errors |
-| [StayEasy Manager 3.2 release notes](samples/release-notes/stayeasy-manager-3.2-release-notes.md) | Release notes | Highlights, what the reader must do, new features, fixes, deprecations and known issues with workarounds |
-| [Online check-in business requirements](samples/business-analysis/online-check-in-requirements.md) | Business analysis | Problem and goal, scope, stakeholders, current and future process, prioritised requirements, user stories with acceptance criteria, risks and open questions |
-| [StayEasy Guest app 2.5 release notes](samples/release-notes/stayeasy-guest-app-2.5-release-notes.md) | Release notes | A shorter, mobile-app version of the format: new, improved, fixed and known issues |
-| [StayEasy Manager quick start](samples/quick-start-guide/stayeasy-manager-first-booking.md) | Quick-start guide | A one-page guide from sign-in to a first booking in a business application |
-| [Excel 365 walkthrough](samples/excel-walkthrough/) | Walkthrough guide | A screenshot-led, step-by-step guide to data calculations with formulas, with exact formulas, result cells, reference tables and alt text for every image |
-| [Git Basics course storyboard](samples/git-basics-course/) | Training course | A 10-slide e-learning storyboard on Git, version control and branching, with objectives, diagrams, two knowledge checks and key takeaways |
-| [Retrieve data with SQL lesson package](samples/instructional-design-sql/) | Instructional design | A 2-hour beginner lesson with objectives, a timed lesson plan, a hands-on lab, an assessment, an answer key and an evaluation plan |
-| [Before and after editing samples](samples/before-and-after-editing/) | Editing | Three rewrites of confusing text, each with a note on every change and why |
-| [Application FAQs](samples/faqs/) | FAQs | Task-focused answers for end users of a web application, written as the question a user would ask followed by clear steps or facts |
+I thrive in asynchronous, remote, **docs-as-code** environments using Git, Markdown, Postman, and automated CI/CD linting workflows.
 
-> StayEasy, StayEasy Manager, readtimer and the SQL lesson data are examples that
-> I created to demonstrate my writing and instructional design skills. They do not
-> describe the work of any current or former employer.
+---
 
-## How I work
+## 🎯 Portfolio Samples by Discipline
 
-| Area | Approach |
-| --- | --- |
-| Audience | I decide who is reading and what they need to do, then write the shortest clear path to that goal |
-| Accuracy | I work with developers, QA engineers and subject matter experts and check steps against the product |
-| Authoring | Markdown for content and OpenAPI for API reference, stored in Git and reviewed through pull requests |
-| Process | Agile: documenting each sprint's features and interface changes, and writing release notes people can scan |
-| Improvement | I use feedback and assessment results to revise pages that confuse readers |
+### 📘 Pillar 1: Technical Writing & Docs-as-Code
 
-## Skills and tools
+| Sample | Format / Type | What It Demonstrates |
+| :--- | :--- | :--- |
+| **[StayEasy Booking API Documentation](samples/api-documentation/)** | API reference & guide | Getting started guide, authentication, endpoint reference, error handling, rate limits, changelog, OpenAPI 3.0 specification (`openapi.yaml`), and an importable Postman collection. |
+| **[readtimer Tool Documentation](samples/readtimer/)** | Developer README | Production-ready README for a Python CLI tool, covering installation, CLI flag syntax, real output examples, exit codes, and troubleshooting. |
+| **[Git Quick-Start Guide](samples/quick-start-guide/first-git-repository.md)** | Quick-start guide | Zero-to-first-commit onboarding guide with visual check points and a troubleshooting table for common terminal errors. |
+| **[StayEasy Manager 3.2 Release Notes](samples/release-notes/stayeasy-manager-3.2-release-notes.md)** | Release notes | Scannable, structured release documentation: release highlights, actionable upgrade steps, feature additions, deprecations, and workarounds. |
+| **[Excel 365 Walkthrough Guide](samples/excel-walkthrough/)** | Step-by-step guide | Screenshot-led walkthrough for data calculations and formulas with 22 annotated figures, exact formula inputs, and accessible alt-text. |
+| **[Application FAQs](samples/faqs/)** | End-user help | Task-oriented FAQ articles structured around natural user queries and crisp resolution steps. |
+| **[Before & After Editorial Sample](samples/before-and-after-editing/)** | Editing & UX writing | Three side-by-side rewrites of convoluted software instructions, detailing the rationale behind every edit. |
 
-- **Documentation:** user guides, step-by-step walkthroughs, API documentation, online help, release notes, FAQs, knowledge base articles, training manuals and assessments
-- **Docs-as-code and tools:** Markdown, Git and GitHub, Postman, MS Word, MS Office including Excel, HTML and XML editors, Visual Studio
-- **Practices:** Agile and Scrum documentation, requirements analysis, UX writing, structured authoring, diagrams, flowcharts and UI walkthroughs
-- **Languages and data:** Python, JavaScript, SQL, HTML and XML, C#; Oracle and SQL Server
-- **Subject areas:** SaaS and enterprise applications, Google Cloud Platform, hospitality web applications, e-learning, election and government forms
-- **AI and productivity:** Grammarly, Notion AI, Microsoft Copilot
+---
 
-## Experience
+### 🎓 Pillar 2: Instructional Design & E-Learning
 
-| Dates | Role | Organization |
-| --- | --- | --- |
-| Jun 2025 to Oct 2025 | Video Presentation Specialist | Commercial Base Software, Ltd. |
-| Apr 2024 to Dec 2024 | Technical Writer | Civica Resource Pvt. Ltd. |
-| May 2020 to Mar 2024 | Technical Writer and Business Analyst | Buddhi Techno Logic |
+| Sample | Format / Type | What It Demonstrates |
+| :--- | :--- | :--- |
+| **[Retrieve Data with SQL Lesson Package](samples/instructional-design-sql/)** | Full instructional curriculum | Complete 2-hour technical training package built with backward design: timed lesson plan, learning objectives, hands-on lab exercise, runnable SQL sample dataset, knowledge assessment, and grading answer key. |
+| **[Git Basics Course Storyboard](samples/git-basics-course/)** | E-learning storyboard | 10-slide e-learning course storyboard covering version control fundamentals, branching models, interactive knowledge checks, and key takeaway summaries. |
 
-## Repository structure
+---
+
+### 📊 Pillar 3: Business Analysis & Product Documentation
+
+| Sample | Format / Type | What It Demonstrates |
+| :--- | :--- | :--- |
+| **[Online Check-In Business Requirements (BRD)](samples/business-analysis/online-check-in-requirements.md)** | Requirements specification | End-to-end BRD including business problem & objective, in-scope/out-of-scope matrix, stakeholder mapping, current vs. future process flows, prioritized functional requirements, user stories with testable acceptance criteria, and risk mitigation. |
+
+> *Note: StayEasy, StayEasy Manager, readtimer, and the SQL training dataset are portfolio projects created to demonstrate technical writing, instructional design, and business analysis skills.*
+
+---
+
+## 🌐 Remote Work Readiness & Workflows
+
+- **Asynchronous Collaboration:** High degree of self-direction, structured documentation, asynchronous sprint handoffs, and clear communication via Git PRs, Jira/Linear, Slack, and Loom.
+- **Time Zone Flexibility:** Located in India (IST / UTC+5:30), with flexible availability offering 4–5 hours of daily live overlap with US (EST/PST), UK/European, and APAC teams.
+- **Automated Docs Quality (CI/CD):** This repository is backed by a GitHub Actions workflow (`.github/workflows/validate.yml`) running automated OpenAPI linting with Redocly CLI and Markdown linting with Markdownlint CLI.
+
+---
+
+## 🛠 Skills & Tooling
+
+- **Documentation & Authoring:** API documentation, OpenAPI (Swagger 3.0), Postman collections, developer guides, user guides, release notes, knowledge bases, FAQs, UX microcopy.
+- **Instructional Design & L&D:** Curriculum development, backward design (ADDIE), lesson planning, formative assessments, lab exercises, storyboarding, training slide decks.
+- **Business Analysis:** Business Requirements Documents (BRDs), user stories & acceptance criteria (INVEST framework), process flow modeling, stakeholder analysis, gap analysis.
+- **Docs-as-Code & Tools:** Markdown, Git, GitHub (Actions, Pages), Postman, Redocly CLI, VS Code, MS Word, Excel, PowerPoint.
+- **Technical Knowledge:** Python, JavaScript, SQL, HTML5/CSS3, REST APIs, JSON, YAML, relational databases (Oracle, SQL Server).
+- **Process & Frameworks:** Agile/Scrum, docs sprint planning, cross-functional engineering review, user feedback iteration.
+
+---
+
+## 💼 Experience
+
+| Period | Role | Organization |
+| :--- | :--- | :--- |
+| **Jun 2025 – Oct 2025** | Video Presentation Specialist | Commercial Base Software, Ltd. |
+| **Apr 2024 – Dec 2024** | Technical Writer | Civica Resource Pvt. Ltd. |
+| **May 2020 – Mar 2024** | Technical Writer & Business Analyst | Buddhi Techno Logic |
+
+---
+
+## 📁 Repository Structure
 
 ```text
 .
-├── index.html                       Portfolio website (GitHub Pages)
-├── README.md                        This page
+├── index.html                       Interactive portfolio website (GitHub Pages)
+├── README.md                        Repository documentation & overview
 ├── samples/
-│   ├── api-documentation/           StayEasy Booking API sample
-│   │   ├── README.md
-│   │   ├── getting-started.md
-│   │   ├── authentication.md
-│   │   ├── errors.md
-│   │   ├── rate-limits-and-pagination.md
-│   │   ├── changelog.md
-│   │   ├── reference/
-│   │   │   ├── rooms.md
-│   │   │   └── bookings.md
-│   │   ├── openapi.yaml
-│   │   └── postman_collection.json
-│   ├── git-basics-course/           Git Basics course storyboard
-│   │   ├── git-basics.pdf
-│   │   └── slides/                  Slide previews
-│   ├── readtimer/                   README sample, with the small tool it documents
-│   ├── quick-start-guide/           Git quick start
-│   ├── release-notes/               StayEasy Manager 3.2 release notes
-│   ├── instructional-design-sql/    SQL lesson package
-│   │   ├── README.md
-│   │   ├── lesson-plan.md
-│   │   ├── hands-on-lab.md
-│   │   ├── assessment.md
-│   │   ├── answer-key.md
-│   │   └── lab-data/                Practice data
-│   ├── business-analysis/           Business requirements sample
-│   ├── before-and-after-editing/    Editing samples
-│   ├── excel-walkthrough/           Excel 365 walkthrough sample
-│   │   ├── README.md
-│   │   ├── performing-data-calculations-using-formulas-in-excel-365.md
-│   │   ├── images/                  22 screenshots
-│   │   └── source-file/             Original Word document
-│   └── faqs/                        Application FAQ samples
-│       ├── README.md
-│       └── source-files/            Original Word documents
-└── .github/workflows/validate.yml   Automated checks
+│   ├── api-documentation/           StayEasy Booking API (OpenAPI 3.0, Postman, guides)
+│   ├── instructional-design-sql/    2-hour SQL lesson plan, lab, and assessment
+│   ├── git-basics-course/           10-slide e-learning course storyboard
+│   ├── business-analysis/           Online check-in Business Requirements Document (BRD)
+│   ├── readtimer/                   CLI tool developer documentation & Python source
+│   ├── quick-start-guide/           Git repository quick-start guide
+│   ├── release-notes/               Release notes (Manager 3.2 & Guest App 2.5)
+│   ├── excel-walkthrough/           Excel 365 formulas guide with 22 figures
+│   ├── before-and-after-editing/    Copyediting & technical rewrite samples
+│   └── faqs/                        SaaS application FAQs
+└── .github/workflows/validate.yml   Automated OpenAPI & Markdown CI validation
 ```
 
-## Contact
+---
 
-I am looking for a remote technical writing role. Reach me on
-[LinkedIn](https://www.linkedin.com/in/get-mandhira-thilip/) or at
-[mandhira.thilip@gmail.com](mailto:mandhira.thilip@gmail.com).
+## 📬 Contact & Availability
+
+I am actively interviewing for **remote roles** across Technical Writing, Instructional Design, and Technical Business Analysis.
+
+- **Portfolio Website:** [mandhira.github.io/My-Portfolio](https://mandhira.github.io/My-Portfolio/)
+- **LinkedIn:** [linkedin.com/in/get-mandhira-thilip](https://www.linkedin.com/in/get-mandhira-thilip/)
+- **Email:** [mandhira.thilip@gmail.com](mailto:mandhira.thilip@gmail.com)
