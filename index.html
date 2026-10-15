@@ -1,0 +1,710 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mandhira Nayagi | Technical Writer</title>
+  <meta name="description" content="Portfolio of Mandhira Nayagi, a technical writer for software, SaaS and API documentation. Open to remote roles.">
+  <meta property="og:title" content="Mandhira Nayagi | Technical Writer">
+  <meta property="og:description" content="API documentation, FAQs, user guides and training content for software and SaaS products.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f5f7f6;
+      --surface: #ffffff;
+      --ink: #17232b;
+      --muted: #52626b;
+      --line: #d9e1e3;
+      --teal: #0b4f54;
+      --teal-soft: #dcecec;
+      --teal-bright: #14808a;
+      --marker: #f6dd8f;
+      --code-bg: #0c3438;
+      --code-ink: #e6f1f1;
+      --code-dim: #8fb4b6;
+      --serif: "Newsreader", Georgia, "Times New Roman", serif;
+      --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+      --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      --sidebar: 280px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 1.5rem; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 1.0625rem;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--teal); text-underline-offset: 3px; }
+    a:hover { color: var(--teal-bright); }
+    :focus-visible { outline: 3px solid var(--teal-bright); outline-offset: 3px; border-radius: 4px; }
+
+    .skip {
+      position: absolute; left: -999px; top: 0.5rem;
+      background: var(--surface); color: var(--ink); padding: 0.5rem 0.9rem; z-index: 10;
+    }
+    .skip:focus { left: 0.5rem; }
+
+    /* Layout: a docs-style sidebar plus a reading column */
+    .shell { display: grid; grid-template-columns: var(--sidebar) minmax(0, 1fr); min-height: 100vh; }
+
+    .sidebar {
+      position: sticky; top: 0; height: 100vh;
+      background: var(--teal); color: #eaf4f4;
+      padding: 2.25rem 1.75rem;
+      display: flex; flex-direction: column; gap: 2rem;
+    }
+    .brand { margin: 0; font-family: var(--serif); font-size: 1.6rem; font-weight: 500; line-height: 1.2; }
+    .brand a { color: inherit; text-decoration: none; }
+    .role { margin: 0.35rem 0 0; color: #b9d6d7; font-size: 0.95rem; line-height: 1.45; }
+    .nav ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.15rem; }
+    .nav a {
+      display: block; padding: 0.45rem 0.75rem; margin-left: -0.75rem;
+      color: #d4e6e7; text-decoration: none; border-radius: 6px; font-size: 0.98rem;
+    }
+    .nav a:hover { background: rgba(255,255,255,0.09); color: #fff; }
+    .nav a[aria-current="true"] { background: rgba(255,255,255,0.14); color: #fff; font-weight: 500; }
+    .side-links { margin-top: auto; display: grid; gap: 0.6rem; font-size: 0.95rem; }
+    .side-links a { color: #fff; }
+    .status { display: flex; gap: 0.6rem; align-items: baseline; color: #b9d6d7; font-size: 0.92rem; line-height: 1.4; }
+    .status::before {
+      content: ""; flex: none; width: 0.55rem; height: 0.55rem; border-radius: 50%;
+      background: #7fe0a8; transform: translateY(-1px);
+    }
+
+    main { padding: 4.5rem clamp(1.25rem, 5vw, 5rem) 3rem; max-width: 62rem; }
+    section { padding-bottom: 4.5rem; }
+
+    h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1.15; margin: 0; letter-spacing: -0.01em; }
+    h1 { font-size: clamp(2.8rem, 6.2vw, 4.6rem); letter-spacing: -0.02em; }
+    h2 { font-size: clamp(1.8rem, 3.2vw, 2.4rem); margin-bottom: 1.25rem; }
+    h3 { font-size: 1.3rem; }
+
+    /* Intro */
+    .intro .lede { font-family: var(--serif); font-size: clamp(1.35rem, 2.4vw, 1.75rem); line-height: 1.4; margin: 1.5rem 0 0; max-width: 34em; }
+    .intro .lede mark { background: linear-gradient(transparent 58%, var(--marker) 58%); color: inherit; padding: 0 0.1em; }
+    .intro p { max-width: 38em; }
+    .actions { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 2rem; }
+    .btn {
+      display: inline-block; padding: 0.7rem 1.25rem; border-radius: 8px; font-weight: 500;
+      text-decoration: none; border: 1.5px solid var(--teal); font-size: 1rem;
+    }
+    .btn.primary { background: var(--teal); color: #fff; }
+    .btn.primary:hover { background: #083c40; color: #fff; }
+    .btn.secondary { color: var(--teal); background: transparent; }
+    .btn.secondary:hover { background: var(--teal-soft); color: var(--teal); }
+
+    /* Samples viewer */
+    .viewer { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+    [role="tablist"] { display: flex; gap: 0; border-bottom: 1px solid var(--line); background: #eef3f3; overflow-x: auto; }
+    [role="tab"] {
+      appearance: none; border: 0; background: none; cursor: pointer;
+      padding: 0.95rem 1.05rem; font: inherit; font-weight: 500; color: var(--muted);
+      border-bottom: 3px solid transparent; margin-bottom: -1px; white-space: nowrap;
+    }
+    [role="tab"]:hover { color: var(--ink); }
+    [role="tab"][aria-selected="true"] { color: var(--teal); background: var(--surface); border-bottom-color: var(--teal); }
+    [role="tabpanel"] { padding: clamp(1.25rem, 3vw, 2.25rem); }
+    [role="tabpanel"][hidden] { display: none; }
+
+    .panel-head { margin-bottom: 1.25rem; }
+    .panel-head p { margin: 0.4rem 0 0; color: var(--muted); max-width: 40em; }
+    .endpoint { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.75rem; margin: 1.5rem 0 0.5rem; }
+    .endpoint .verb { font-family: var(--mono); font-size: 0.9rem; font-weight: 600; background: var(--teal); color: #fff; padding: 0.15rem 0.55rem; border-radius: 5px; }
+    .endpoint .path { font-family: var(--mono); font-size: 1.05rem; }
+
+    .table-wrap { overflow-x: auto; margin: 1rem 0 1.5rem; border: 1px solid var(--line); border-radius: 8px; }
+    table { border-collapse: collapse; width: 100%; font-size: 0.95rem; min-width: 34rem; }
+    th, td { text-align: left; padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { background: #f1f5f5; font-weight: 600; }
+    tr:last-child td { border-bottom: 0; }
+    td code, p code { font-family: var(--mono); font-size: 0.88em; background: var(--teal-soft); padding: 0.1em 0.4em; border-radius: 4px; }
+
+    .codeblock { margin: 1rem 0; border-radius: 8px; background: var(--code-bg); color: var(--code-ink); overflow: hidden; }
+    .codeblock .label { padding: 0.5rem 1rem; font-size: 0.85rem; color: var(--code-dim); border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .codeblock pre { margin: 0; padding: 1rem 1.1rem; overflow-x: auto; font-family: var(--mono); font-size: 0.88rem; line-height: 1.6; tab-size: 2; }
+    .k { color: #9fd8d0; } .s { color: #f2d98a; } .n { color: #f0b49a; } .c { color: var(--code-dim); }
+
+    .note { margin-top: 1.25rem; padding: 0.8rem 1rem; border-left: 4px solid var(--marker); background: #fbf6e2; font-size: 0.95rem; border-radius: 0 6px 6px 0; }
+    .doc-links { display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; margin: 1.5rem 0 0; padding: 0; list-style: none; font-size: 0.98rem; }
+
+    /* Walkthrough excerpts */
+    h4 { font-family: var(--serif); font-weight: 500; font-size: 1.2rem; margin: 1.75rem 0 0.5rem; }
+    .steps { margin: 0.5rem 0 1rem; padding-left: 1.5rem; max-width: 46rem; }
+    .steps > li { margin-bottom: 0.9rem; padding-left: 0.3rem; }
+    .steps li p { margin: 0.9rem 0 0; }
+    figure { margin: 1rem 0 0.25rem; }
+    figure img { display: block; max-width: 100%; height: auto; border: 1px solid var(--line); border-radius: 6px; background: #fff; }
+    .table-wrap.narrow { max-width: 22rem; }
+    .table-wrap.narrow table { min-width: 0; }
+
+    /* Course slide galleries */
+    .course { margin-top: 2rem; padding-top: 1.75rem; border-top: 1px solid var(--line); }
+    .course:first-of-type { margin-top: 1.25rem; padding-top: 0; border-top: 0; }
+    .course p { max-width: 42em; margin: 0.4rem 0 0; }
+    .meta { color: var(--muted); font-size: 0.95rem; }
+    .slides { list-style: none; margin: 1.25rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr)); gap: 1rem; }
+    .slides a { display: block; text-decoration: none; color: var(--muted); font-size: 0.9rem; line-height: 1.4; }
+    .slides img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border: 1px solid var(--line); border-radius: 6px; margin-bottom: 0.4rem; background: #fff; }
+    .slides a:hover img { border-color: var(--teal-bright); }
+    .slides a:hover { color: var(--teal); }
+    .outline { max-width: 42em; margin: 1rem 0 0; padding-left: 1.25rem; }
+    .outline li { margin-bottom: 0.35rem; }
+    .outline ul { margin: 0.35rem 0 0.6rem; padding-left: 1.25rem; }
+
+    /* Developer docs, editing comparison */
+    .compare { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 1rem 0 0.5rem; }
+    .compare > div { border: 1px solid var(--line); border-radius: 8px; padding: 1rem 1.15rem; background: #fff; }
+    .compare .before { background: #faf3f1; }
+    .compare .after { background: #f1f8f6; border-color: #b7d8d3; }
+    .compare h5 { margin: 0 0 0.5rem; font: 600 0.95rem var(--sans); color: var(--muted); }
+    .compare p { margin: 0; max-width: none; font-size: 1rem; }
+    .changes { margin: 0.75rem 0 0; padding-left: 1.25rem; max-width: 42em; font-size: 0.98rem; }
+    .changes li { margin-bottom: 0.3rem; }
+    .checks { list-style: none; margin: 1rem 0 0; padding: 0; display: grid; gap: 0.4rem; max-width: 42em; }
+    .checks li { padding-left: 1.6rem; position: relative; }
+    .checks li::before { content: "\2713"; position: absolute; left: 0; color: var(--teal-bright); font-weight: 600; }
+    @media (max-width: 40rem) { .compare { grid-template-columns: minmax(0, 1fr); } }
+
+    /* FAQ accordion */
+    .faq { display: grid; gap: 0.75rem; margin-top: 1.25rem; }
+    details { border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+    details[open] { border-color: var(--teal-bright); }
+    summary {
+      cursor: pointer; list-style: none; padding: 1rem 3rem 1rem 1.25rem; position: relative;
+      font-family: var(--serif); font-size: 1.2rem; font-weight: 500; line-height: 1.35;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: "+"; position: absolute; right: 1.25rem; top: 0.8rem; font-family: var(--sans);
+      font-size: 1.5rem; color: var(--teal); line-height: 1;
+    }
+    details[open] summary::after { content: "\2212"; }
+    .answer { padding: 0 1.25rem 1.1rem; max-width: 42em; }
+    .answer p { margin: 0 0 0.9rem; }
+    .answer p:last-child { margin-bottom: 0; }
+    .ui { font-weight: 600; }
+
+    /* Approach */
+    dl { margin: 0; display: grid; gap: 0; border-top: 1px solid var(--line); }
+    .row { display: grid; grid-template-columns: minmax(10rem, 14rem) 1fr; gap: 1.5rem; padding: 1.2rem 0; border-bottom: 1px solid var(--line); }
+    dt { font-family: var(--serif); font-size: 1.25rem; font-weight: 500; }
+    dd { margin: 0; color: #2b3a43; max-width: 38em; }
+
+    /* Skills */
+    .skills { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.75rem 3rem; }
+    .skills h3 { margin-bottom: 0.5rem; font-size: 1.15rem; }
+    .skills p { margin: 0; color: #2b3a43; }
+
+    /* Experience */
+    .jobs { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+    .jobs li { display: grid; grid-template-columns: minmax(10rem, 14rem) 1fr; gap: 1.5rem; padding: 1.1rem 0; border-bottom: 1px solid var(--line); }
+    .when { color: var(--muted); font-size: 0.95rem; }
+    .jobs strong { font-weight: 600; }
+    .jobs span.where { display: block; color: var(--muted); }
+    .jobs p { margin: 0.35rem 0 0; color: #2b3a43; max-width: 38em; }
+
+    /* Contact */
+    .contact p { max-width: 36em; }
+    .contact .actions { margin-top: 1.25rem; }
+    footer { color: var(--muted); font-size: 0.9rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+
+    @media (max-width: 62rem) {
+      .shell { grid-template-columns: minmax(0, 1fr); }
+      .sidebar { position: static; height: auto; padding: 1.5rem 1.25rem 1rem; gap: 1rem; }
+      .nav ul { display: flex; overflow-x: auto; gap: 0.25rem; padding-bottom: 0.25rem; }
+      .nav a { margin-left: 0; white-space: nowrap; }
+      .side-links { margin-top: 0; display: flex; flex-wrap: wrap; gap: 0.4rem 1.25rem; }
+      main { padding-top: 2.5rem; }
+    }
+    @media (max-width: 40rem) {
+      .row, .jobs li { grid-template-columns: 1fr; gap: 0.35rem; }
+      .skills { grid-template-columns: 1fr; }
+      body { font-size: 1rem; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="shell">
+    <aside class="sidebar">
+      <div>
+        <p class="brand"><a href="#top">Mandhira Nayagi</a></p>
+        <p class="role">Technical writer for software, SaaS and API products</p>
+      </div>
+      <nav class="nav" aria-label="Sections">
+        <ul>
+          <li><a href="#top">Introduction</a></li>
+          <li><a href="#samples">Writing samples</a></li>
+          <li><a href="#approach">How I work</a></li>
+          <li><a href="#skills">Skills and tools</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="side-links">
+        <div class="status">Open to remote technical writing roles</div>
+        <a href="https://www.linkedin.com/in/get-mandhira-thilip/" rel="noopener">LinkedIn profile</a>
+        <a href="mailto:mandhira.thilip@gmail.com">mandhira.thilip@gmail.com</a>
+      </div>
+    </aside>
+
+    <main id="main">
+      <section id="top" class="intro" data-section>
+        <h1>Mandhira Nayagi</h1>
+        <p class="lede">I write documentation for software people use every day, so a new user can finish the task <mark>without asking for help</mark>.</p>
+        <p>I have five years of experience writing user guides, step-by-step walkthroughs, API documentation, release notes, FAQs and training materials for enterprise and SaaS applications. I work in a docs-as-code workflow with Markdown, Git and Postman, and I work closely with developers, QA engineers and subject matter experts to keep every page accurate.</p>
+        <div class="actions">
+          <a class="btn primary" href="#samples">Read my samples</a>
+          <a class="btn secondary" href="https://www.linkedin.com/in/get-mandhira-thilip/" rel="noopener">Connect on LinkedIn</a>
+        </div>
+      </section>
+
+      <section id="samples" data-section>
+        <h2>Writing samples</h2>
+        <div class="viewer">
+          <div role="tablist" aria-label="Writing samples">
+            <button role="tab" id="tab-api" aria-controls="panel-api" aria-selected="true">API reference</button>
+            <button role="tab" id="tab-dev" aria-controls="panel-dev" aria-selected="false" tabindex="-1">Developer docs</button>
+            <button role="tab" id="tab-ba" aria-controls="panel-ba" aria-selected="false" tabindex="-1">Business analysis</button>
+            <button role="tab" id="tab-xl" aria-controls="panel-xl" aria-selected="false" tabindex="-1">Excel walkthrough</button>
+            <button role="tab" id="tab-course" aria-controls="panel-course" aria-selected="false" tabindex="-1">Instructional design</button>
+            <button role="tab" id="tab-edit" aria-controls="panel-edit" aria-selected="false" tabindex="-1">Editing</button>
+            <button role="tab" id="tab-faq" aria-controls="panel-faq" aria-selected="false" tabindex="-1">FAQs</button>
+          </div>
+
+          <div role="tabpanel" id="panel-api" aria-labelledby="tab-api" tabindex="0">
+            <div class="panel-head">
+              <h3>StayEasy Booking API</h3>
+              <p>A complete documentation set for a hotel booking API: getting started, authentication, endpoint reference, errors, rate limits, changelog, an OpenAPI 3.0 file and a Postman collection. Here is one endpoint from the reference.</p>
+            </div>
+
+            <div class="endpoint"><span class="verb">POST</span><span class="path">/bookings</span></div>
+            <p>Reserves a room for the dates you specify. Send an <code>Idempotency-Key</code> header to retry safely without creating duplicate bookings.</p>
+
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Field</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
+                <tbody>
+                  <tr><td><code>room_id</code></td><td>string</td><td>Yes</td><td>ID of the room to book</td></tr>
+                  <tr><td><code>check_in</code></td><td>string (date)</td><td>Yes</td><td>Check-in date in <code>YYYY-MM-DD</code> format</td></tr>
+                  <tr><td><code>check_out</code></td><td>string (date)</td><td>Yes</td><td>Check-out date. Must be after <code>check_in</code></td></tr>
+                  <tr><td><code>guests</code></td><td>integer</td><td>Yes</td><td>Number of guests. Cannot exceed the room's <code>max_guests</code></td></tr>
+                  <tr><td><code>guest.name</code></td><td>string</td><td>Yes</td><td>Full name of the lead guest</td></tr>
+                  <tr><td><code>guest.email</code></td><td>string</td><td>Yes</td><td>Email address for the confirmation</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="codeblock">
+              <div class="label">Example request</div>
+<pre>curl -X POST "https://sandbox.stayeasy.example.com/v1/bookings" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -H "Idempotency-Key: 3f2b8c1e-5d4a-4c1b-9a7e-2b6f0d9e1a44" \
+  -d '{
+    "room_id": "rm_1042",
+    "check_in": "2026-11-10",
+    "check_out": "2026-11-12",
+    "guests": 2,
+    "guest": { "name": "Priya Raman", "email": "priya.raman@example.com" }
+  }'</pre>
+            </div>
+
+            <div class="codeblock">
+              <div class="label">Response: 201 Created</div>
+<pre>{
+  <span class="k">"id"</span>: <span class="s">"bk_88213"</span>,
+  <span class="k">"status"</span>: <span class="s">"confirmed"</span>,
+  <span class="k">"room_id"</span>: <span class="s">"rm_1042"</span>,
+  <span class="k">"check_in"</span>: <span class="s">"2026-11-10"</span>,
+  <span class="k">"check_out"</span>: <span class="s">"2026-11-12"</span>,
+  <span class="k">"guests"</span>: <span class="n">2</span>,
+  <span class="k">"total_price"</span>: { <span class="k">"amount"</span>: <span class="n">9000</span>, <span class="k">"currency"</span>: <span class="s">"INR"</span> }
+}</pre>
+            </div>
+
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Status</th><th>Error code</th><th>Cause and fix</th></tr></thead>
+                <tbody>
+                  <tr><td><code>400</code></td><td><code>invalid_request</code></td><td>A field is missing or badly formatted. Check the request body against the table above.</td></tr>
+                  <tr><td><code>409</code></td><td><code>room_unavailable</code></td><td>The room is booked for some or all of those dates. Search again and choose another room or dates.</td></tr>
+                  <tr><td><code>429</code></td><td><code>rate_limited</code></td><td>Too many requests. Wait for the number of seconds in the <code>Retry-After</code> header.</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <ul class="doc-links">
+              <li><a href="samples/api-documentation/README.md" data-gh="blob">Read the full documentation set</a></li>
+              <li><a href="samples/api-documentation/openapi.yaml" data-gh="blob">OpenAPI file</a></li>
+              <li><a href="samples/api-documentation/postman_collection.json" data-gh="blob">Postman collection</a></li>
+            </ul>
+            <p class="note">StayEasy is a fictional product I created to show how I document an API. It does not describe the work of any employer.</p>
+          </div>
+
+          <div role="tabpanel" id="panel-dev" aria-labelledby="tab-dev" tabindex="0" hidden>
+            <div class="panel-head">
+              <h3>Developer documentation</h3>
+              <p>Three short documents for developers and product users: a README for a command-line tool, a one-page quick start and release notes. For the tool and the quick start, I ran every command and used the real output.</p>
+            </div>
+
+            <div class="course">
+              <h4>README for a command-line tool</h4>
+              <p>The README for <code>readtimer</code>, a small Python tool that estimates how long a Markdown file takes to read. It covers installation, a first run, every option, examples with real output, exit codes and troubleshooting.</p>
+              <div class="codeblock">
+                <div class="label">Quick start from the README</div>
+<pre>python3 readtimer.py examples/guide.md
+
+examples/guide.md: 1 min read (106 words)</pre>
+              </div>
+              <ul class="doc-links">
+                <li><a href="samples/readtimer/README.md" data-gh="blob">Read the README</a></li>
+                <li><a href="samples/readtimer/readtimer.py" data-gh="blob">View the tool</a></li>
+              </ul>
+            </div>
+
+            <div class="course">
+              <h4>Quick start: create your first Git repository</h4>
+              <p>A one-page guide that takes a new user from zero to a first commit in about five minutes. Each step has one command, the result to expect, and a table of common errors at the end.</p>
+              <div class="codeblock">
+                <div class="label">Step 5: save your first commit</div>
+<pre>git add README.md
+git commit -m "Add README"
+
+[main (root-commit) d2be91b] Add README
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md</pre>
+              </div>
+              <ul class="doc-links">
+                <li><a href="samples/quick-start-guide/first-git-repository.md" data-gh="blob">Read the quick start</a></li>
+                <li><a href="samples/quick-start-guide/stayeasy-manager-first-booking.md" data-gh="blob">Read a second quick start, for a business application</a></li>
+              </ul>
+            </div>
+
+            <div class="course">
+              <h4>Release notes</h4>
+              <p>Release notes for StayEasy Manager 3.2, a fictional hotel management web application. They open with highlights and what the reader needs to do, then cover new features, improvements, fixes, changes that may affect users, deprecations and known issues with workarounds.</p>
+              <ul class="outline">
+                <li><strong>Import room prices from a CSV file.</strong> Update prices for many rooms at once.</li>
+                <li><strong>Filter the booking calendar.</strong> Show only the room types and statuses you need.</li>
+                <li><strong>Faster search.</strong> Booking search returns results more quickly for large accounts.</li>
+              </ul>
+              <ul class="doc-links">
+                <li><a href="samples/release-notes/stayeasy-manager-3.2-release-notes.md" data-gh="blob">Read the web application release notes</a></li>
+                <li><a href="samples/release-notes/stayeasy-guest-app-2.5-release-notes.md" data-gh="blob">Read a shorter mobile app version (2.5)</a></li>
+              </ul>
+            </div>
+            <p class="note">The readtimer tool, StayEasy Manager and its release notes are examples I created to show my writing. They do not describe the work of any employer.</p>
+          </div>
+
+          <div role="tabpanel" id="panel-ba" aria-labelledby="tab-ba" tabindex="0" hidden>
+            <div class="course">
+              <h4>Business requirements: online check-in</h4>
+              <p>A short business requirements document for a fictional feature. It starts with the problem and a measurable goal, then sets the scope, names the stakeholders, compares the current and future process, and lists numbered requirements with a priority and a source. User stories have acceptance criteria written as Given, When, Then.</p>
+              <ul class="outline">
+                <li><strong>Problem and goal.</strong> Check-in takes about 6 minutes. The goal is 2 minutes or less.</li>
+                <li><strong>Requirements.</strong> Ten functional and five non-functional requirements, ranked Must, Should or Could.</li>
+                <li><strong>Acceptance criteria.</strong> Three user stories with testable outcomes, including the exact error messages.</li>
+                <li><strong>Risks and open questions.</strong> Each has an owner and a date.</li>
+              </ul>
+              <ul class="doc-links">
+                <li><a href="samples/business-analysis/online-check-in-requirements.md" data-gh="blob">Read the requirements document</a></li>
+              </ul>
+            </div>
+            <p class="note">The product, people, figures and dates are examples I created. They do not describe the work of any employer.</p>
+          </div>
+
+          <div role="tabpanel" id="panel-xl" aria-labelledby="tab-xl" tabindex="0" hidden>
+            <div class="panel-head">
+              <h3>Performing data calculations using formulas in Excel 365</h3>
+              <p>A hands-on walkthrough with 22 annotated screenshots. It opens with the tasks the learner will complete, then gives numbered steps for four practice areas: running totals, counting cells, built-in functions and formula options. Here are two excerpts.</p>
+            </div>
+
+            <h4>Count cells in a range</h4>
+            <ol class="steps">
+              <li>Select cell <strong>B14</strong>.</li>
+              <li>To find the number of orders from New York, in the formula bar, type <code>=COUNT(C2:C11)</code> and press <strong>Enter</strong>. The result is displayed in cell <strong>B14</strong>.
+                <figure><img loading="lazy" src="samples/excel-walkthrough/images/07-orders-count-new-york.png" width="479" height="409" alt="The Order History worksheet is open and is partially shown. The Name Box and the formula bar are shown. The formula to calculate the number of orders from New York is shown in the formula bar and is highlighted in red. Column A displays the products, column B displays the units, and column C displays the orders from New York. The result of the formula is shown in the cell B14 and is highlighted in red."></figure>
+              </li>
+            </ol>
+
+            <h4>Work with built-in functions</h4>
+            <ol class="steps">
+              <li>Select cell <strong>F2</strong>.</li>
+              <li>To calculate the gift amount for Kivell, in the formula bar, type <code>=IFS(C2&gt;850,"25",C2&gt;650,"20",C2&gt;450,"15",C2&gt;250,"10",TRUE,"F")</code> and press <strong>Enter</strong>. The result is displayed in cell <strong>F2</strong>.
+                <p>The gift amount for each Order ID is calculated as follows:</p>
+                <div class="table-wrap narrow">
+                  <table>
+                    <thead><tr><th>Total Cost</th><th>Gift Amount</th></tr></thead>
+                    <tbody>
+                      <tr><td>&gt;850</td><td>25</td></tr>
+                      <tr><td>&gt;650</td><td>20</td></tr>
+                      <tr><td>&gt;450</td><td>15</td></tr>
+                      <tr><td>&gt;250</td><td>10</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <figure><img loading="lazy" src="samples/excel-walkthrough/images/10-shipping-ifs-gift-amount.png" width="687" height="202" alt="The Shipping worksheet is open and is partially shown. The Name Box and the formula bar are shown. The formula to calculate the gift amount for Kivell is shown in the formula bar and is highlighted in red. Column A displays the order ID, column B displays the name of the person, column C displays the total cost in dollars, column D displays the shipping cost in dollars, column E displays the shipping time in days, and column F displays the gift amount in dollars. Row 2 displays the data of Kivell. The result of the formula is shown in the cell F2 and is highlighted in red."></figure>
+              </li>
+            </ol>
+
+            <ul class="doc-links">
+              <li><a href="samples/excel-walkthrough/performing-data-calculations-using-formulas-in-excel-365.md" data-gh="blob">Read the full walkthrough</a></li>
+              <li><a href="samples/excel-walkthrough/source-file/performing-data-calculations-using-formulas-in-excel-365.docx">Original Word file</a></li>
+            </ul>
+          </div>
+
+          <div role="tabpanel" id="panel-course" aria-labelledby="tab-course" tabindex="0" hidden>
+            <div class="panel-head">
+              <h3>Instructional design</h3>
+              <p>Two samples: a slide-by-slide course storyboard, and a complete lesson package that runs from objectives through to evaluation.</p>
+            </div>
+
+            <div class="course">
+              <h4>Git Basics</h4>
+              <p>10 slides introducing Git, version control, repositories, working copies and branching strategies, with a drag-and-drop knowledge check and a multiple-choice question.</p>
+              <ul class="slides">
+                <li><a href="samples/git-basics-course/slides/03-what-is-git.jpg"><img loading="lazy" width="1281" height="720" src="samples/git-basics-course/slides/03-what-is-git.jpg" alt="Slide 3, What is a GIT? A diagram shows main, develop and feature branches with version tags v0.1, v0.2 and v1.0.">What is Git?</a></li>
+                <li><a href="samples/git-basics-course/slides/05-repositories-and-working-copy.jpg"><img loading="lazy" width="1281" height="720" src="samples/git-basics-course/slides/05-repositories-and-working-copy.jpg" alt="Slide 5, Version Control System. A diagram shows three developers each with a working copy, pushing to and pulling from the main repository.">Repositories and working copies</a></li>
+                <li><a href="samples/git-basics-course/slides/06-branching.jpg"><img loading="lazy" width="1281" height="720" src="samples/git-basics-course/slides/06-branching.jpg" alt="Slide 6, Branching Strategies. A list of what branches are used for sits beside a diagram of feature branches merging into the main branch.">Branching</a></li>
+                <li><a href="samples/git-basics-course/slides/08-check-your-understanding.jpg"><img loading="lazy" width="1281" height="720" src="samples/git-basics-course/slides/08-check-your-understanding.jpg" alt="Slide 8, Check Your Understanding. A drag-and-drop activity asks the learner to match VCS, repositories, working copy and branches to their features.">Knowledge check</a></li>
+                <li><a href="samples/git-basics-course/slides/10-key-takeaways.jpg"><img loading="lazy" width="1281" height="720" src="samples/git-basics-course/slides/10-key-takeaways.jpg" alt="Slide 10, Key Takeaways. Six cards restate the main points of the course.">Key takeaways</a></li>
+              </ul>
+              <ul class="doc-links">
+                <li><a href="samples/git-basics-course/git-basics.pdf">Read as PDF</a></li>
+                <li><a href="samples/git-basics-course/README.md" data-gh="blob">About this sample</a></li>
+              </ul>
+            </div>
+
+            <div class="course">
+              <h4>Retrieve data with SQL: a 2-hour beginner lesson</h4>
+              <p>A complete lesson package for new analysts and support staff who work with booking data. Every objective is taught, practised and assessed, and a table in the README checks that nothing is missing. The booking data is made up, and I ran every query to check the results.</p>
+              <ol class="outline">
+                <li><strong>Describe</strong> a table, a row and a column</li>
+                <li><strong>Write</strong> a <code>SELECT</code> statement that returns chosen columns</li>
+                <li><strong>Filter</strong> rows with <code>WHERE</code>, <code>AND</code> and <code>OR</code></li>
+                <li><strong>Sort</strong> results with <code>ORDER BY</code></li>
+                <li><strong>Summarise</strong> data with <code>COUNT</code>, <code>SUM</code>, <code>AVG</code> and <code>GROUP BY</code></li>
+              </ol>
+              <ul class="doc-links">
+                <li><a href="samples/instructional-design-sql/README.md" data-gh="blob">Overview, objectives and evaluation plan</a></li>
+                <li><a href="samples/instructional-design-sql/lesson-plan.md" data-gh="blob">Lesson plan</a></li>
+                <li><a href="samples/instructional-design-sql/hands-on-lab.md" data-gh="blob">Hands-on lab</a></li>
+                <li><a href="samples/instructional-design-sql/assessment.md" data-gh="blob">Assessment</a></li>
+                <li><a href="samples/instructional-design-sql/answer-key.md" data-gh="blob">Answer key</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div role="tabpanel" id="panel-edit" aria-labelledby="tab-edit" tabindex="0" hidden>
+            <div class="panel-head">
+              <h3>Before and after: editing samples</h3>
+              <p>Three examples of turning confusing text into clear text, each with a note on every change and why I made it. The "before" text is an invented example that shows common problems.</p>
+            </div>
+
+            <div class="course">
+              <h4>A dense paragraph</h4>
+              <div class="compare">
+                <div class="before">
+                  <h5>Before (56 words, one sentence)</h5>
+                  <p>In order to facilitate the utilisation of the idempotency functionality, API consumers are advised to leverage the Idempotency-Key header such that, in the event that a request is retried subsequent to a network failure, duplicate bookings will not be created as a result of the retried request being processed by the server for a second time.</p>
+                </div>
+                <div class="after">
+                  <h5>After (51 words, three sentences)</h5>
+                  <p>To avoid duplicate bookings when you retry a request, send an <code>Idempotency-Key</code> header with a unique value, such as a UUID. If a network error stops you from seeing the response, send the request again with the same key. The API returns the original booking instead of creating a second one.</p>
+                </div>
+              </div>
+              <ul class="changes">
+                <li>Starts with the goal, so the reader sees the benefit before the instruction.</li>
+                <li>Splits one long sentence into three, with one idea in each.</li>
+                <li>Replaces heavy phrases such as "subsequent to" and "in the event that" with plain words.</li>
+                <li>Says what the API does, so the reader knows the result to expect.</li>
+              </ul>
+            </div>
+
+            <div class="course">
+              <h4>An error message</h4>
+              <div class="compare">
+                <div class="before">
+                  <h5>Before (6 words)</h5>
+                  <p>Error 4012: Invalid input in field.</p>
+                </div>
+                <div class="after">
+                  <h5>After (14 words)</h5>
+                  <p>Check-out date must be after check-in date. Change the check-out date and try again.</p>
+                </div>
+              </div>
+              <ul class="changes">
+                <li>Names the field, says what is wrong, and tells the reader what to do next.</li>
+                <li>Drops the code from the front, because the reader needs the problem first.</li>
+              </ul>
+            </div>
+
+            <div class="course">
+              <h4>My editing checklist</h4>
+              <ul class="checks">
+                <li>The title says what the reader will do or learn.</li>
+                <li>Requirements and warnings come before the step they affect.</li>
+                <li>Each step has one action and starts with a verb.</li>
+                <li>Interface labels are bold and match the screen exactly.</li>
+                <li>Every fact was checked with a subject matter expert or the product.</li>
+              </ul>
+              <ul class="doc-links">
+                <li><a href="samples/before-and-after-editing/before-and-after.md" data-gh="blob">Read all three examples, including a full procedure rewrite</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div role="tabpanel" id="panel-faq" aria-labelledby="tab-faq" tabindex="0" hidden>
+            <div class="panel-head">
+              <h3>Application FAQs</h3>
+              <p>Short answers for end users of a web application. Each one starts with the question a user would ask, then gives the steps or facts in the order they are needed.</p>
+            </div>
+            <div class="faq">
+              <details open>
+                <summary>How are users assigned to a specific Facility or a Surgeon?</summary>
+                <div class="answer">
+                  <p>To assign the user to specific Facility, click <span class="ui">SELECT FACILITIES</span> and select the required Facility. To assign the user to all Facilities, select the <span class="ui">Assign to all facilities</span> check box.</p>
+                  <p>To assign the user to specific Surgeon, click <span class="ui">SELECT SURGEONS</span> and select the required Surgeon. To assign the user to all Surgeons, select the <span class="ui">Assign to all surgeons</span> check box.</p>
+                </div>
+              </details>
+              <details>
+                <summary>If a user role is assigned to a surgeon, what access does it provide?</summary>
+                <div class="answer">
+                  <p>Assigning a User Role to a Surgeon allows the User Role to view patients, create surgical plans, and view optimization data. You can use the <span class="ui">Patient Access</span> and <span class="ui">Optimization Access</span> options to allow the user to access patients' and optimization data. The Surgeon can also edit who has access to their patients and optimizations, so this can change based on the Surgeon preferences as well.</p>
+                </div>
+              </details>
+            </div>
+            <ul class="doc-links">
+              <li><a href="samples/faqs/README.md" data-gh="blob">View the FAQs on GitHub</a></li>
+              <li><a href="samples/faqs/source-files/assigning-users-to-facilities-and-surgeons.docx">Word file: facilities and surgeons</a></li>
+              <li><a href="samples/faqs/source-files/surgeon-user-role-access.docx">Word file: surgeon role access</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="approach" data-section>
+        <h2>How I work</h2>
+        <dl>
+          <div class="row"><dt>Start with the reader</dt><dd>Before I write, I decide who is reading and what they are trying to get done. Then I write the shortest clear path to that goal.</dd></div>
+          <div class="row"><dt>Get it right with the team</dt><dd>I turn business and functional requirements into documentation by working with developers, QA engineers and subject matter experts, and I check steps against the product itself.</dd></div>
+          <div class="row"><dt>Docs as code</dt><dd>I write in Markdown, keep content in Git, and review changes through pull requests. For APIs, the reference follows a single OpenAPI file and is tested in Postman.</dd></div>
+          <div class="row"><dt>Keep pace with releases</dt><dd>In Agile teams I document each sprint's features and interface changes, and I write release notes people can scan quickly.</dd></div>
+          <div class="row"><dt>Improve from feedback</dt><dd>I use feedback and assessment results to revise pages that confuse readers.</dd></div>
+        </dl>
+      </section>
+
+      <section id="skills" data-section>
+        <h2>Skills and tools</h2>
+        <div class="skills">
+          <div><h3>Documentation</h3><p>User guides, step-by-step walkthroughs, API documentation, online help, release notes and change logs, FAQs, knowledge base articles, training manuals and assessments.</p></div>
+          <div><h3>Docs-as-code and tools</h3><p>Markdown, Git and GitHub, Postman, MS Word, MS Office including Excel, HTML and XML editors, Visual Studio.</p></div>
+          <div><h3>Practices</h3><p>Agile and Scrum documentation, requirements analysis, UX writing, structured authoring, diagrams, flowcharts and UI walkthroughs.</p></div>
+          <div><h3>Languages and data</h3><p>Python, JavaScript, SQL, HTML and XML, C#. Databases: Oracle and SQL Server.</p></div>
+          <div><h3>Subject areas</h3><p>SaaS and enterprise applications, cloud platforms such as Google Cloud Platform, hospitality web applications, e-learning, and election and government forms.</p></div>
+          <div><h3>AI and productivity</h3><p>Grammarly, Notion AI, Microsoft Copilot.</p></div>
+        </div>
+      </section>
+
+      <section id="experience" data-section>
+        <h2>Experience</h2>
+        <ul class="jobs">
+          <li>
+            <div class="when">June 2025 to October 2025</div>
+            <div><strong>Video Presentation Specialist</strong><span class="where">Commercial Base Software, Ltd.</span><p>Created technical video tutorials and documentation presentations on C# concepts, software features and application workflows, with storyboards and scripts.</p></div>
+          </li>
+          <li>
+            <div class="when">April 2024 to December 2024</div>
+            <div><strong>Technical Writer</strong><span class="where">Civica Resource Pvt. Ltd.</span><p>Wrote and maintained end-user documentation for enterprise software, and documented Agile sprint releases, UI updates and feature enhancements.</p></div>
+          </li>
+          <li>
+            <div class="when">May 2020 to March 2024</div>
+            <div><strong>Technical Writer and Business Analyst</strong><span class="where">Buddhi Techno Logic</span><p>Wrote user manuals, quick-start guides, FAQs, troubleshooting guides and API documentation, created walkthrough guides, and designed training curricula with assessments and hands-on labs.</p></div>
+          </li>
+          <li>
+            <div class="when">2003 to 2012</div>
+            <div><strong>Earlier teaching roles</strong><span class="where">Alagappa University Study Centre, Eurokids Butterflies</span><p>Taught undergraduate Information Technology and Management courses and delivered early-learning programs.</p></div>
+          </li>
+        </ul>
+      </section>
+
+      <section id="contact" class="contact" data-section>
+        <h2>Contact</h2>
+        <p>I am looking for a remote technical writing role. The quickest ways to reach me are LinkedIn and email.</p>
+        <div class="actions">
+          <a class="btn primary" href="https://www.linkedin.com/in/get-mandhira-thilip/" rel="noopener">Message me on LinkedIn</a>
+          <a class="btn secondary" href="mailto:mandhira.thilip@gmail.com">Email me</a>
+        </div>
+      </section>
+
+      <footer>Based in Madurai, Tamil Nadu, India. Works remotely.</footer>
+    </main>
+  </div>
+
+  <script>
+    // Tabs
+    (function () {
+      var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
+      function select(tab, focus) {
+        tabs.forEach(function (t) {
+          var on = t === tab;
+          t.setAttribute('aria-selected', on ? 'true' : 'false');
+          t.tabIndex = on ? 0 : -1;
+          document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+        });
+        if (focus) tab.focus();
+      }
+      tabs.forEach(function (tab, i) {
+        tab.addEventListener('click', function () { select(tab, false); });
+        tab.addEventListener('keydown', function (e) {
+          var next = null;
+          if (e.key === 'ArrowRight') next = tabs[(i + 1) % tabs.length];
+          if (e.key === 'ArrowLeft') next = tabs[(i - 1 + tabs.length) % tabs.length];
+          if (e.key === 'Home') next = tabs[0];
+          if (e.key === 'End') next = tabs[tabs.length - 1];
+          if (next) { e.preventDefault(); select(next, true); }
+        });
+      });
+    })();
+
+    // Point sample links at the GitHub repository when the site runs on GitHub Pages
+    (function () {
+      var host = location.hostname;
+      if (!/\.github\.io$/.test(host)) return;
+      var user = host.split('.')[0];
+      var repo = location.pathname.split('/').filter(Boolean)[0];
+      if (!repo) return;
+      var base = 'https://github.com/' + user + '/' + repo + '/blob/main/';
+      document.querySelectorAll('a[data-gh]').forEach(function (a) {
+        a.href = base + a.getAttribute('href');
+      });
+    })();
+
+    // Highlight the current section in the sidebar
+    (function () {
+      var links = {};
+      document.querySelectorAll('.nav a').forEach(function (a) { links[a.getAttribute('href').slice(1)] = a; });
+      var sections = document.querySelectorAll('[data-section]');
+      if (!('IntersectionObserver' in window)) return;
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          Object.keys(links).forEach(function (id) { links[id].removeAttribute('aria-current'); });
+          if (links[entry.target.id]) links[entry.target.id].setAttribute('aria-current', 'true');
+        });
+      }, { rootMargin: '-20% 0px -65% 0px' });
+      sections.forEach(function (s) { io.observe(s); });
+    })();
+  </script>
+</body>
+</html>

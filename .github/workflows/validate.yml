@@ -1,0 +1,25 @@
+name: Validate documentation
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Lint the OpenAPI specification
+        run: npx --yes @redocly/cli lint samples/api-documentation/openapi.yaml
+
+      - name: Lint the Markdown files
+        continue-on-error: true
+        run: npx --yes markdownlint-cli2 "**/*.md"
